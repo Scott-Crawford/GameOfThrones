@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             >
+    <TableRow
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/air_date_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="@string/air_date"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+
+        <TextView
+            android:id="@+id/air_date_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.67"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+    </TableRow>
+    <TableRow
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/episode_num_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="@string/episode_num"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+
+        <TextView
+            android:id="@+id/episode_num_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.67"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+    </TableRow>
+    <TableRow
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/season_num_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="@string/season_num"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+
+        <TextView
+            android:id="@+id/season_num_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.67"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+    </TableRow>
+    <TableRow
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/vote_average_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="@string/vote_average"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+
+        <TextView
+            android:id="@+id/vote_average_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.67"
+
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+    </TableRow>
+    <TableRow
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/overview_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="@string/overview"
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+
+        <TextView
+            android:id="@+id/overview_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.67"
+
+            android:textColor="@android:color/black"
+            android:typeface="serif"/>
+    </TableRow>
+</TableLayout>
+
+
+
