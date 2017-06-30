@@ -23,6 +23,8 @@ public class SeasonFragment extends Fragment {
     private JSONObject mJSONObject;
     private static final String ARG_JSONObject = "JSONObject";
 
+
+    //Inflate the view, and update the UI
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_episode_list,container,false);
@@ -32,12 +34,8 @@ public class SeasonFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-        updateUI();
-    }
-
+    //Create a SeasonLab singleton, loading it with the data from the volley request
+    //Get the list of episodes from seasonLab, load them into an adapter for the RecyclerView
     private void updateUI(){
         SeasonLab seasonLab = SeasonLab.get(getActivity(),mJSONObject);
         List<Episode> episodes = seasonLab.getEpisodes();
@@ -50,6 +48,7 @@ public class SeasonFragment extends Fragment {
         }
     }
 
+    //Class for seasonHolder,which is each item in the RecyclerView, handling their text and give them a onClickListener that starts a new activity for that episode
     private class SeasonHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mTitleTextView;
         private Episode mEpisode;
@@ -69,6 +68,7 @@ public class SeasonFragment extends Fragment {
         }
     }
 
+    //Class for the adapter for the RecyclerView. Takes a list of episodes, creates season holders for each one, and binds an episode to them
     private class SeasonAdapter extends RecyclerView.Adapter<SeasonHolder>{
         private List<Episode> mEpisodes;
         public SeasonAdapter(List<Episode> episodes){
@@ -91,6 +91,7 @@ public class SeasonFragment extends Fragment {
         }
     }
 
+    //Takes the JSONobject from the activity's intent, loads them into the args.
     public static SeasonFragment newInstance(JSONObject jsonObject){
         Bundle args = new Bundle();
         String jsonObjectString = jsonObject.toString();
@@ -100,6 +101,7 @@ public class SeasonFragment extends Fragment {
         return fragment;
     }
 
+    //Gets the JSONObject from the args for use in setting up the fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

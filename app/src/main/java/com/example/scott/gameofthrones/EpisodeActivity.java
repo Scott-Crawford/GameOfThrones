@@ -13,6 +13,7 @@ public class EpisodeActivity extends AppCompatActivity {
 
     private static final String EXTRA_EPISODE_ID="com.example.scott.gameofthrones";
 
+    //on creation of the activity, get the episode id from the intent in order to set the title of the activity. Then start the fragment manager and call createFragment, then starts the fragment.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         int episodeID = (int) getIntent().getSerializableExtra(EXTRA_EPISODE_ID);
@@ -29,12 +30,13 @@ public class EpisodeActivity extends AppCompatActivity {
         }
     }
 
-
+    //Create a fragment, passing it the episodeID from the intent
     protected Fragment createFragment(){
         int episodeId = (int) getIntent().getSerializableExtra(EXTRA_EPISODE_ID);
         return EpisodeFragment.newInstance(episodeId);
     }
 
+    //Creates a new intent when called, putting the episodeID as an extra to later be used by the episode fragment.
     public static Intent newIntent(Context packageContext, int episodeID){
         Intent intent = new Intent(packageContext,EpisodeActivity.class);
         intent.putExtra(EXTRA_EPISODE_ID,episodeID);

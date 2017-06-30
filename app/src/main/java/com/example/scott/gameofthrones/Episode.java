@@ -1,11 +1,7 @@
 package com.example.scott.gameofthrones;
 
 import java.util.Date;
-import java.util.UUID;
 
-/**
- * Created by scott on 6/7/2017.
- */
 
 public class Episode {
     private int mId;

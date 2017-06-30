@@ -8,9 +8,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.Volley;
 
-/**
- * Created by Michael on 6/17/2015.
- */
 public class AppController extends Application {
 
     /**
@@ -37,7 +34,7 @@ public class AppController extends Application {
     }
 
     /**
-     * @return co.pixelmatter.meme.ApplicationController singleton instance
+     * @return ApplicationController singleton instance
      */
     public static synchronized AppController getInstance() {
         return sInstance;
@@ -58,9 +55,6 @@ public class AppController extends Application {
 
     /**
      * Adds the specified request to the global queue, if tag is specified
-     * then it is used else Default TAG is used.
-     *
-     * @param req, tag
      */
     public <T> void addToRequestQueue(Request<T> req, String tag) {
         // set the default tag if tag is empty
@@ -73,8 +67,6 @@ public class AppController extends Application {
 
     /**
      * Adds the specified request to the global queue using the Default TAG.
-     *
-     * @param req
      */
     public <T> void addToRequestQueue(Request<T> req) {
         // set the default tag if tag is empty
@@ -86,8 +78,6 @@ public class AppController extends Application {
     /**
      * Cancels all pending requests by the specified TAG, it is important
      * to specify a TAG so that the pending/ongoing requests can be cancelled.
-     *
-     * @param tag
      */
     public void cancelPendingRequests(Object tag) {
         if (mRequestQueue != null) {

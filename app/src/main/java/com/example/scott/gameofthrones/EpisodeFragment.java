@@ -30,7 +30,7 @@ public class EpisodeFragment extends Fragment{
     private TextView mVoteAverage;
     private TextView mOverview;
 
-
+    //Loads the episodeID into the arguments of the fragment for later use.
     public static EpisodeFragment newInstance(int episodeId){
         Bundle args = new Bundle();
         args.putSerializable(ARG_EPISODE_ID,episodeId);
@@ -39,6 +39,7 @@ public class EpisodeFragment extends Fragment{
         return fragment;
     }
 
+    //Loads the episodeID from the arguments, then calls get in SeasonLab to retrieve the episode with the corresponding ID
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

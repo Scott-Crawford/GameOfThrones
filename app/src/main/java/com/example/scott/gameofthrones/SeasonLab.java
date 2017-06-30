@@ -28,13 +28,14 @@ import java.util.concurrent.TimeoutException;
  * Created by scott on 6/8/2017.
  */
 
+
 public class SeasonLab {
     private static final String TAG = "SeasonLab";
     private static SeasonLab sSeasonLab;
     private List<Episode> mEpisodes;
     private static JSONObject mJSONObject;
 
-
+    //Creates the singleton, or returns it if it already exists
     public static SeasonLab get(Context context,JSONObject jsonObject){
         if(sSeasonLab==null){
             sSeasonLab=new SeasonLab(context,jsonObject);
@@ -42,6 +43,7 @@ public class SeasonLab {
         return sSeasonLab;
     }
 
+    //Returns the singleton
     public static SeasonLab get(Context context){
         if(sSeasonLab==null){
             sSeasonLab=new SeasonLab(context,null);
@@ -49,8 +51,7 @@ public class SeasonLab {
         return sSeasonLab;
     }
 
-
-
+    //Loads the JSONObject and starts parsing it into episodes
     private SeasonLab(Context context,JSONObject jsonObject){
 
         try {
@@ -84,11 +85,12 @@ public class SeasonLab {
         }
 
     }
-
+    //retuns the list of episodes
     public List<Episode> getEpisodes(){
         return mEpisodes;
     }
 
+    //gets specific episode based on id
     public Episode getEpisode(int id){
         for(Episode episode : mEpisodes){
             if(episode.getId()==id){
